@@ -43,11 +43,44 @@ function RotatingWord({ words, play }: { words: string[]; play: boolean }) {
   );
 }
 
-/** Dönen dairesel metin rozeti — projelere kaydırır */
+/** Dönen dairesel metin rozeti — ortadaki ok imleci takip eder, tıklayınca projelere kaydırır */
 function OrbitBadge({ label }: { label: string }) {
   const text = `${site.role} • ${site.roleSecondary} • `;
+  const fine = useFinePointer();
+  const ref = useRef<HTMLAnchorElement>(null);
+  // Ok açısı (derece) ve diskin imlece doğru kayması
+  const angle = useSpring(0, { stiffness: 140, damping: 18, mass: 0.6 });
+  const dx = useSpring(0, { stiffness: 160, damping: 16 });
+  const dy = useSpring(0, { stiffness: 160, damping: 16 });
+
+  useEffect(() => {
+    if (!fine) return;
+    let last = 0;
+    const move = (e: PointerEvent) => {
+      const el = ref.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const vx = e.clientX - (r.left + r.width / 2);
+      const vy = e.clientY - (r.top + r.height / 2);
+      // ArrowDown varsayılan olarak aşağıyı (90°) gösterir
+      let target = (Math.atan2(vy, vx) * 180) / Math.PI - 90;
+      // en kısa yoldan dönsün (359° → 1° atlaması olmasın)
+      while (target - last > 180) target -= 360;
+      while (target - last < -180) target += 360;
+      last = target;
+      angle.set(target);
+      const dist = Math.hypot(vx, vy) || 1;
+      const pull = Math.min(dist, 400) / 400;
+      dx.set((vx / dist) * 9 * pull);
+      dy.set((vy / dist) * 9 * pull);
+    };
+    window.addEventListener("pointermove", move, { passive: true });
+    return () => window.removeEventListener("pointermove", move);
+  }, [fine, angle, dx, dy]);
+
   return (
     <a
+      ref={ref}
       href="#projects"
       aria-label={label}
       data-cursor="hover"
@@ -61,9 +94,14 @@ function OrbitBadge({ label }: { label: string }) {
           <textPath href="#orbit">{text}</textPath>
         </text>
       </svg>
-      <span className="grid size-12 place-items-center rounded-full bg-acid text-ink transition-transform duration-500 ease-expo group-hover:scale-110 md:size-14">
-        <ArrowDown className="size-5 transition-transform duration-500 ease-expo group-hover:translate-y-0.5" />
-      </span>
+      <motion.span
+        style={{ x: dx, y: dy }}
+        className="grid size-12 place-items-center rounded-full bg-acid text-ink shadow-[0_0_40px_-6px_rgb(210_255_58/0.6)] transition-[scale] duration-500 ease-expo group-hover:scale-110 md:size-14"
+      >
+        <motion.span style={{ rotate: angle }} className="grid place-items-center">
+          <ArrowDown className="size-5" strokeWidth={2.4} />
+        </motion.span>
+      </motion.span>
     </a>
   );
 }
