@@ -10,6 +10,7 @@ import { useLocale } from "@/lib/providers";
 import { cn } from "@/lib/utils";
 import { Badge, TechTag } from "../ui/Badge";
 import { GithubIcon } from "../ui/BrandIcons";
+import { Tilt } from "../ui/Tilt";
 import { ProjectCover } from "./ProjectCover";
 
 export type CardLayout = "wide" | "half" | "split";
@@ -20,6 +21,7 @@ export function ProjectCard({ project, layout, delay = 0 }: { project: Project; 
   const repo = project.repo || site.socials.github;
 
   const cover = (
+    <Tilt className={layout === "split" ? "h-full" : undefined} max={layout === "half" ? 5 : 3}>
     <Link
       href={href}
       data-cursor-label={t.ui.viewProject}
@@ -41,6 +43,7 @@ export function ProjectCard({ project, layout, delay = 0 }: { project: Project; 
         <ArrowUpRight className="size-5" />
       </span>
     </Link>
+    </Tilt>
   );
 
   const body = (

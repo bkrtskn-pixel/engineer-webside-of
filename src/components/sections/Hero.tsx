@@ -15,25 +15,8 @@ import { site } from "@/config/site";
 import { useClock, useFinePointer } from "@/lib/hooks";
 import { EASE } from "@/lib/motion";
 import { useIntro, useLocale } from "@/lib/providers";
+import { AnimatedName } from "../ui/AnimatedName";
 import { Button } from "../ui/Button";
-
-function SplitName({ text, play, delay = 0 }: { text: string; play: boolean; delay?: number }) {
-  return (
-    <span className="-my-[0.14em] flex overflow-hidden py-[0.14em]" aria-hidden>
-      {text.split("").map((ch, i) => (
-        <motion.span
-          key={i}
-          className="inline-block will-change-transform"
-          initial={{ y: "102%", rotate: 6 }}
-          animate={play ? { y: "0%", rotate: 0 } : undefined}
-          transition={{ duration: 1.2, ease: EASE, delay: delay + i * 0.05 }}
-        >
-          {ch}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
 
 function RotatingWord({ words, play }: { words: string[]; play: boolean }) {
   const [i, setI] = useState(0);
@@ -102,7 +85,9 @@ export function Hero() {
   const my = useMotionValue(30);
   const sx = useSpring(mx, { stiffness: 60, damping: 20 });
   const sy = useSpring(my, { stiffness: 60, damping: 20 });
-  const spotlight = useMotionTemplate`radial-gradient(520px circle at ${sx}% ${sy}%, rgb(210 255 58 / 0.10), transparent 60%)`;
+  const spotlight = useMotionTemplate`radial-gradient(680px circle at ${sx}% ${sy}%, rgb(210 255 58 / 0.20), rgb(210 255 58 / 0.06) 35%, transparent 65%)`;
+  // Işığın altında ızgara çizgileri belirginleşir
+  const gridMask = useMotionTemplate`radial-gradient(340px circle at ${sx}% ${sy}%, black, transparent 75%)`;
   const onMove = (e: MouseEvent<HTMLElement>) => {
     if (!fine) return;
     const r = e.currentTarget.getBoundingClientRect();
@@ -126,7 +111,15 @@ export function Hero() {
       {/* Arka plan katmanları */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="grid-lines absolute inset-0 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,black,transparent)]" />
-        <motion.div className="absolute inset-0" style={{ backgroundImage: spotlight }} />
+        {fine && (
+          <>
+            <motion.div className="absolute inset-0" style={{ backgroundImage: spotlight }} />
+            <motion.div
+              className="grid-lines-bright absolute inset-0"
+              style={{ maskImage: gridMask, WebkitMaskImage: gridMask }}
+            />
+          </>
+        )}
         <div className="absolute -right-40 -top-40 size-[38rem] rounded-full bg-acid/[0.06] blur-[120px]" />
       </div>
 
@@ -150,7 +143,7 @@ export function Hero() {
           <span className="sr-only">
             {site.fullName} — {site.role}, {site.roleSecondary}
           </span>
-          <SplitName text={site.firstName} play={ready} delay={0.05} />
+          <AnimatedName text={site.firstName} play={ready} delay={0.05} />
           <span className="flex items-center gap-6 md:justify-end md:gap-10">
             <motion.span
               initial={{ opacity: 0, scale: 0.6, rotate: -40 }}
@@ -160,7 +153,7 @@ export function Hero() {
             >
               <OrbitBadge label={t.hero.primaryCta} />
             </motion.span>
-            <SplitName text={site.lastName} play={ready} delay={0.2} />
+            <AnimatedName text={site.lastName} play={ready} delay={0.25} />
           </span>
         </motion.h1>
 

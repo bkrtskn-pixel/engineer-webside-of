@@ -4,6 +4,7 @@ import "@fontsource-variable/space-grotesk";
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
+import { CursorGlow, ScrollProgress } from "@/components/ui/Ambient";
 import { Cursor } from "@/components/ui/Cursor";
 import { site } from "@/config/site";
 import { content, defaultLocale } from "@/content";
@@ -73,6 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Providers>
+          <CursorGlow />
+          <ScrollProgress />
           {children}
           <Cursor />
         </Providers>
