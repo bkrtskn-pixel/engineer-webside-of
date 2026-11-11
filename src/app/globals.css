@@ -110,7 +110,7 @@
   }
   .text-outline {
     color: transparent;
-    -webkit-text-stroke: 1px rgb(239 237 231 / 0.35);
+    -webkit-text-stroke: 1px rgb(239 237 231 / 0.55);
   }
   /* İnce çizgi ızgara arka planı */
   .grid-lines {
