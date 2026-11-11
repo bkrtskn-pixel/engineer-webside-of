@@ -28,7 +28,8 @@ export function Reveal({ children, className, delay = 0, y = 28, as = "div" }: R
   );
 }
 
-/** Satırı maskeden yukarı doğru çıkarır (başlıklar için) */
+/** Satırı maskeden yukarı doğru çıkarır (başlıklar için).
+ *  Görünürlük dış kapsayıcıdan ölçülür; iç eleman maskenin dışında başladığı için. */
 export function MaskLine({
   children,
   className,
@@ -41,19 +42,18 @@ export function MaskLine({
   /** verilirse görünürlük yerine bu bayrağa göre oynar */
   animate?: boolean;
 }) {
-  const target = { y: "0%" };
+  const trigger =
+    animate === undefined
+      ? { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "0px 0px -8% 0px" } }
+      : { initial: "hidden", animate: animate ? "show" : "hidden" };
   return (
-    <span className={`-my-[0.12em] block overflow-hidden py-[0.12em] ${className ?? ""}`}>
+    <motion.span {...trigger} className={`-my-[0.12em] block overflow-hidden py-[0.12em] ${className ?? ""}`}>
       <motion.span
         className="block will-change-transform"
-        initial={{ y: "110%" }}
-        {...(animate === undefined
-          ? { whileInView: target, viewport: { once: true, margin: "0px 0px -10% 0px" } }
-          : { animate: animate ? target : { y: "110%" } })}
-        transition={{ duration: 1.1, ease: EASE, delay }}
+        variants={{ hidden: { y: "110%" }, show: { y: "0%", transition: { duration: 1.1, ease: EASE, delay } } }}
       >
         {children}
       </motion.span>
-    </span>
+    </motion.span>
   );
 }

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  */
 export function ProjectCover({ variant, className }: { variant: CoverVariant; className?: string }) {
   return (
-    <div className={cn("relative h-full w-full overflow-hidden bg-ink-3", className)}>
+    <div lang="en" className={cn("relative h-full w-full overflow-hidden bg-ink-3", className)}>
       <div aria-hidden className="dot-grid absolute inset-0 opacity-60" />
       {variant === "workflow" && <Workflow />}
       {variant === "query" && <Query />}

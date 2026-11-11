@@ -89,7 +89,7 @@ export function Contact() {
                           {ch.icon}
                         </span>
                         <span>
-                          <span className="block font-mono text-[0.65rem] uppercase tracking-wider text-mute">{ch.label}</span>
+                          <span lang="en" className="block font-mono text-[0.65rem] uppercase tracking-wider text-mute">{ch.label}</span>
                           <span className="block text-sm text-bone transition-colors group-hover:text-acid">{ch.value}</span>
                         </span>
                       </span>

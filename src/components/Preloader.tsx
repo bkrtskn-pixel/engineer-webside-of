@@ -65,7 +65,7 @@ export function Preloader() {
           transition={{ duration: 0.9, ease: EASE_IN_OUT }}
         >
           <div className="label flex justify-between">
-            <span>{site.role}</span>
+            <span lang="en">{site.role}</span>
             <span>
               {site.location.city}, {site.location.country}
             </span>

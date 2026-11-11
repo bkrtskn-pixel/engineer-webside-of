@@ -57,7 +57,7 @@ export function Navbar() {
               </span>
               <span className="hidden font-display text-sm font-medium tracking-tight sm:block">
                 {site.fullName}
-                <span className="block font-mono text-[0.62rem] uppercase tracking-[0.08em] text-mute">{site.role}</span>
+                <span lang="en" className="block font-mono text-[0.62rem] uppercase tracking-[0.08em] text-mute">{site.role}</span>
               </span>
             </Link>
 

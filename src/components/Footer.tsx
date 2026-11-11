@@ -60,7 +60,7 @@ export function Footer() {
         <span>
           © {site.year} {site.fullName}. {t.footer.rights}
         </span>
-        <span>{t.footer.built}</span>
+        <span className="normal-case tracking-normal">{t.footer.built}</span>
       </div>
     </footer>
   );

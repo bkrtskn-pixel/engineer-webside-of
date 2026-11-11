@@ -44,7 +44,7 @@ function RotatingWord({ words, play }: { words: string[]; play: boolean }) {
   }, [play, words.length]);
   return (
     <span className="relative inline-flex h-[1.3em] overflow-hidden align-bottom">
-      <AnimatePresence mode="popLayout" initial={false}>
+      <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={words[i]}
           initial={{ y: "100%", opacity: 0 }}
@@ -70,7 +70,7 @@ function OrbitBadge({ label }: { label: string }) {
       data-cursor="hover"
       className="group relative grid size-28 shrink-0 place-items-center md:size-36"
     >
-      <svg viewBox="0 0 200 200" className="absolute inset-0 animate-[spin_18s_linear_infinite] group-hover:[animation-duration:6s]">
+      <svg lang="en" viewBox="0 0 200 200" className="absolute inset-0 animate-[spin_18s_linear_infinite] group-hover:[animation-duration:6s]">
         <defs>
           <path id="orbit" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
         </defs>
@@ -145,7 +145,7 @@ export function Hero() {
         {/* İsim */}
         <motion.h1
           style={{ y: nameY, opacity: fade }}
-          className="display mt-8 text-[clamp(4.6rem,22vw,17.5rem)] text-bone md:mt-10"
+          className="display mt-8 text-[27vw] text-bone md:mt-10 md:text-[clamp(4.6rem,22vw,17.5rem)]"
         >
           <span className="sr-only">
             {site.fullName} — {site.role}, {site.roleSecondary}
