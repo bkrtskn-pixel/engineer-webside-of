@@ -1,6 +1,7 @@
 "use client";
 
 import { MaskLine, Reveal } from "./Reveal";
+import { RepelText } from "./RepelText";
 
 interface Props {
   index: string;
@@ -21,7 +22,9 @@ export function SectionHeader({ index, label, title, intro, aside }: Props) {
       </Reveal>
       <div className="md:col-span-9">
         <h2 className="h-section text-bone">
-          <MaskLine>{title}</MaskLine>
+          <MaskLine>
+            <RepelText text={title} tint />
+          </MaskLine>
         </h2>
         {(intro || aside) && (
           <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

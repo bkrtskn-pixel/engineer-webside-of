@@ -7,6 +7,7 @@ import { useLocale } from "@/lib/providers";
 import { GithubIcon, LinkedinIcon } from "../ui/BrandIcons";
 import { MaskLine, Reveal } from "../ui/Reveal";
 import { ContactForm } from "./ContactForm";
+import { RepelText } from "../ui/RepelText";
 
 export function Contact() {
   const { t } = useLocale();
@@ -46,9 +47,11 @@ export function Contact() {
         </div>
 
         <h2 className="display mt-10 text-[clamp(3rem,10.5vw,10rem)] text-bone">
-          <MaskLine>{c.titleA}</MaskLine>
+          <MaskLine>
+            <RepelText text={c.titleA} force={0.5} tint />
+          </MaskLine>
           <MaskLine delay={0.1} className="text-outline">
-            {c.titleB}
+            <RepelText text={c.titleB} force={0.5} />
           </MaskLine>
         </h2>
 

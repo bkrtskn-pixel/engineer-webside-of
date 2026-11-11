@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { EASE } from "@/lib/motion";
 
 interface RevealProps {
@@ -42,15 +42,18 @@ export function MaskLine({
   /** verilirse görünürlük yerine bu bayrağa göre oynar */
   animate?: boolean;
 }) {
+  // Animasyon bitince maske kalkar (içerideki kaçan harfler kesilmesin)
+  const [done, setDone] = useState(false);
   const trigger =
     animate === undefined
       ? { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "0px 0px -8% 0px" } }
       : { initial: "hidden", animate: animate ? "show" : "hidden" };
   return (
-    <motion.span {...trigger} className={`-my-[0.12em] block overflow-hidden py-[0.12em] ${className ?? ""}`}>
+    <motion.span {...trigger} className={`-my-[0.12em] block py-[0.12em] ${done ? "overflow-visible" : "overflow-hidden"} ${className ?? ""}`}>
       <motion.span
         className="block will-change-transform"
         variants={{ hidden: { y: "110%" }, show: { y: "0%", transition: { duration: 1.1, ease: EASE, delay } } }}
+        onAnimationComplete={(def) => def === "show" && setDone(true)}
       >
         {children}
       </motion.span>
