@@ -126,7 +126,8 @@ export function Hero() {
       {/* Arka plan katmanları */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="grid-lines absolute inset-0 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,black,transparent)]" />
-        {fine && <motion.div className="absolute inset-0" style={{ backgroundImage: spotlight }} />}
+        <motion.div className="absolute inset-0" style={{ backgroundImage: spotlight }} />
+        <div className="absolute -right-40 -top-40 size-[38rem] rounded-full bg-acid/[0.06] blur-[120px]" />
       </div>
 
       <div className="shell flex flex-1 flex-col">
