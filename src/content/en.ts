@@ -41,6 +41,18 @@ export const en: Content = {
     secondaryCta: "Get in touch",
     rotating: ["Backend Development", "Java", "Oracle Database", "SQL", "Web Development"],
   },
+  scan: {
+    label: "Let me review your site — drop your link",
+    placeholder: "yourwebsite.com",
+    button: "Scan my website",
+    scanning: "Scanning…",
+    invalid: "Enter a valid web address (e.g. yourwebsite.com)",
+    doneTitle: "Your request is ready!",
+    doneText: "Your email app opened with your link included. Once you send it, I'll review your site and get back to you.",
+    again: "Send another site",
+    subject: "Website review request",
+    body: "Hi Bekir,\n\nI'd like you to review the website below and assess it for an update:\n\n",
+  },
   marquee: [
     "Java",
     "Oracle Database",

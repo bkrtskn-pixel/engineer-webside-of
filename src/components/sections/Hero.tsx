@@ -17,6 +17,7 @@ import { EASE } from "@/lib/motion";
 import { useIntro, useLocale } from "@/lib/providers";
 import { AnimatedName } from "../ui/AnimatedName";
 import { Button } from "../ui/Button";
+import { SiteScan } from "./SiteScan";
 
 function RotatingWord({ words, play }: { words: string[]; play: boolean }) {
   const [i, setI] = useState(0);
@@ -194,6 +195,11 @@ export function Hero() {
             <AnimatedName text={site.lastName} play={ready} delay={0.25} />
           </span>
         </motion.h1>
+
+        {/* Web sitemi tarayın */}
+        <motion.div {...appear(0.8)} className="mx-auto mt-10 w-full max-w-2xl md:mt-12">
+          <SiteScan />
+        </motion.div>
 
         {/* Alt ızgara */}
         <div className="mt-auto grid gap-8 pb-8 pt-10 md:grid-cols-12 md:items-end md:gap-6 md:pb-10">

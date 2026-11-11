@@ -70,6 +70,18 @@ export interface Content {
     secondaryCta: string;
     rotating: string[];
   };
+  scan: {
+    label: string;
+    placeholder: string;
+    button: string;
+    scanning: string;
+    invalid: string;
+    doneTitle: string;
+    doneText: string;
+    again: string;
+    subject: string;
+    body: string;
+  };
   marquee: string[];
   about: {
     label: string;

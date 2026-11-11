@@ -41,6 +41,18 @@ export const tr: Content = {
     secondaryCta: "Benimle iletişime geç",
     rotating: ["Backend Development", "Java", "Oracle Database", "SQL", "Web Development"],
   },
+  scan: {
+    label: "Sitenizi inceleyeyim — linkinizi bırakın",
+    placeholder: "siteniz.com",
+    button: "Web sitemi tarayın",
+    scanning: "Taranıyor…",
+    invalid: "Geçerli bir web adresi girin (ör. siteniz.com)",
+    doneTitle: "Talebiniz hazır!",
+    doneText: "E-posta uygulamanız linkiniz eklenmiş olarak açıldı. Gönderdiğinizde sitenizi inceleyip size dönüş yapacağım.",
+    again: "Başka bir site gönder",
+    subject: "Web sitesi inceleme talebi",
+    body: "Merhaba Bekir,\n\nAşağıdaki web sitemin incelenmesini ve güncellenmesi için değerlendirilmesini istiyorum:\n\n",
+  },
   marquee: [
     "Java",
     "Oracle Database",
