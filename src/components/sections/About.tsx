@@ -45,7 +45,7 @@ function Letter({
 /** Kaydırdıkça sağdan soldan toplanıp düzene giren paragraf */
 function ScrollStatement({ text }: { text: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 1", "center 0.5"] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 1", "center 0.62"] });
   // Dağılma mesafesi ekran genişliğine göre (mobilde daha kısa)
   const [spread, setSpread] = useState(700);
   useEffect(() => {
@@ -81,7 +81,7 @@ export function About() {
   const { t } = useLocale();
   const a = t.about;
   return (
-    <section id="about" className="relative py-24 md:py-40">
+    <section id="about" className="relative overflow-x-clip py-24 md:py-40">
       <div className="shell">
         <SectionHeader index="01" label={a.label} title={a.label} />
 
