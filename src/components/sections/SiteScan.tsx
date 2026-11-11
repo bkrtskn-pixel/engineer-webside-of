@@ -1,12 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, Globe, ScanSearch } from "lucide-react";
+import { Check, Globe } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { site } from "@/config/site";
 import { EASE } from "@/lib/motion";
 import { useLocale } from "@/lib/providers";
 import { cn } from "@/lib/utils";
+import { Eye } from "../ui/Eye";
 
 /** Girilen adresi https://… biçimine getirir; geçersizse null */
 function normalizeUrl(raw: string): string | null {
@@ -151,14 +152,12 @@ export function SiteScan({ className }: { className?: string }) {
               type="submit"
               disabled={state === "scanning"}
               data-cursor="hover"
-              className="group relative inline-flex h-14 shrink-0 items-center justify-center gap-2.5 overflow-hidden rounded-full bg-acid px-6 font-medium text-ink disabled:cursor-wait"
+              className="group relative inline-flex h-14 shrink-0 items-center justify-center gap-2.5 overflow-hidden rounded-full bg-acid pl-3 pr-6 font-medium text-ink disabled:cursor-wait"
             >
               <span aria-hidden className="absolute inset-0 origin-left scale-x-0 bg-bone transition-transform duration-500 ease-expo group-hover:scale-x-100" />
-              <ScanSearch
-                className={cn(
-                  "relative size-5 transition-transform duration-500 ease-expo group-hover:rotate-12 group-hover:scale-110",
-                  state === "scanning" && "animate-spin",
-                )}
+              <Eye
+                scanning={state === "scanning"}
+                className="relative size-8 shrink-0 transition-transform duration-500 ease-expo group-hover:scale-110"
               />
               <span className="relative whitespace-nowrap text-[0.95rem]">{state === "scanning" ? s.scanning : s.button}</span>
             </button>
