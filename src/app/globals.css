@@ -6,10 +6,10 @@
    Display: Space Grotesk · Metin: Inter · Etiket: JetBrains Mono
    ───────────────────────────────────────────────────────────── */
 @theme {
-  --color-ink: #09090b;
-  --color-ink-2: #111113;
-  --color-ink-3: #19191c;
-  --color-ink-4: #232327;
+  --color-ink: #000000;
+  --color-ink-2: #0b0b0c;
+  --color-ink-3: #141416;
+  --color-ink-4: #1f1f22;
   --color-bone: #efede7;
   --color-bone-2: #c9c7c0;
   --color-mute: #85858c;
