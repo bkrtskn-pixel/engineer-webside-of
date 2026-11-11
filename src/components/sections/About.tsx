@@ -1,32 +1,78 @@
 "use client";
 
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeader } from "../ui/SectionHeader";
 import { useLocale } from "@/lib/providers";
 
-/** Kaydırdıkça kelime kelime aydınlanan paragraf */
-function Word({ children, progress, range }: { children: string; progress: MotionValue<number>; range: [number, number] }) {
-  const opacity = useTransform(progress, range, [0.16, 1]);
+/** Deterministik sözde-rastgele (sunucu/istemci aynı sonucu üretsin) */
+function rnd(i: number, salt: number) {
+  const x = Math.sin(i * 12.9898 + salt * 78.233) * 43758.5453;
+  return x - Math.floor(x);
+}
+
+/** Tek harf: dağınık konumdan kaydırmayla yerine uçar */
+function Letter({
+  ch,
+  i,
+  progress,
+  range,
+  spread,
+}: {
+  ch: string;
+  i: number;
+  progress: MotionValue<number>;
+  range: [number, number];
+  spread: number;
+}) {
+  // Sırayla sağdan / soldan; mesafe, yükseklik ve dönüş rastgele
+  const side = rnd(i, 1) > 0.5 ? 1 : -1;
+  const fromX = side * (0.25 + rnd(i, 2) * 0.75) * spread;
+  const fromY = (rnd(i, 3) - 0.5) * 360;
+  const fromR = (rnd(i, 4) - 0.5) * 140;
+  const x = useTransform(progress, range, [fromX, 0]);
+  const y = useTransform(progress, range, [fromY, 0]);
+  const rotate = useTransform(progress, range, [fromR, 0]);
+  const opacity = useTransform(progress, [range[0], range[0] + (range[1] - range[0]) * 0.4, range[1]], [0, 0.55, 1]);
   return (
-    <span className="relative mr-[0.25em] inline-block">
-      <motion.span style={{ opacity }}>{children}</motion.span>
-    </span>
+    <motion.span className="inline-block will-change-transform" style={{ x, y, rotate, opacity }}>
+      {ch}
+    </motion.span>
   );
 }
 
+/** Kaydırdıkça sağdan soldan toplanıp düzene giren paragraf */
 function ScrollStatement({ text }: { text: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "end 0.45"] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 1", "center 0.5"] });
+  // Dağılma mesafesi ekran genişliğine göre (mobilde daha kısa)
+  const [spread, setSpread] = useState(700);
+  useEffect(() => {
+    const update = () => setSpread(Math.min(window.innerWidth * 0.6, 900));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const words = text.split(" ");
+  const total = text.replace(/ /g, "").length;
+  let n = 0;
   return (
     <p ref={ref} className="font-display text-[clamp(1.75rem,4.2vw,3.6rem)] font-medium leading-[1.08] tracking-[-0.03em] text-bone">
-      {words.map((w, i) => (
-        <Word key={i} progress={scrollYProgress} range={[i / words.length, (i + 1) / words.length]}>
-          {w}
-        </Word>
-      ))}
+      <span className="sr-only">{text}</span>
+      <span aria-hidden>
+        {words.map((w, wi) => (
+          <span key={wi} className="mr-[0.25em] inline-block whitespace-nowrap">
+            {w.split("").map((ch) => {
+              const i = n++;
+              // Harfler sırayla ama üst üste binen aralıklarla toplanır
+              const start = (i / total) * 0.55;
+              return <Letter key={i} ch={ch} i={i} progress={scrollYProgress} range={[start, start + 0.45]} spread={spread} />;
+            })}
+          </span>
+        ))}
+      </span>
     </p>
   );
 }
