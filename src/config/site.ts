@@ -13,6 +13,8 @@ export const site = {
   role: "Computer Engineer",
   roleSecondary: "Software Developer",
   email: "bkrtskn@gmail.com",
+  /** Telefon: ekranda görünen biçim ve tel: bağlantısı için uluslararası biçim. Boşsa gizlenir. */
+  phone: { display: "+90 554 498 68 21", href: "+905544986821" },
   location: { city: "Ankara", country: "Türkiye", timeZone: "Europe/Istanbul" },
   /** Açık/kapalı: hero ve iletişimdeki "yeni fırsatlara açık" rozeti */
   openToWork: true,

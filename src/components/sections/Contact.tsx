@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Check, Copy, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/config/site";
 import { useLocale } from "@/lib/providers";
@@ -26,6 +26,9 @@ export function Contact() {
   const linkedin: string = site.socials.linkedin;
   const channels = [
     { label: "E-mail", value: site.email, href: `mailto:${site.email}`, icon: <Mail className="size-5" />, external: false },
+    ...(site.phone.href
+      ? [{ label: "Phone", value: site.phone.display, href: `tel:${site.phone.href}`, icon: <Phone className="size-5" />, external: false }]
+      : []),
     { label: "GitHub", value: `@${site.socials.githubHandle}`, href: site.socials.github, icon: <GithubIcon className="size-5" />, external: true },
     ...(linkedin
       ? [{ label: "LinkedIn", value: linkedin.replace(/^https?:\/\/(www\.)?/, ""), href: linkedin, icon: <LinkedinIcon className="size-5" />, external: true }]

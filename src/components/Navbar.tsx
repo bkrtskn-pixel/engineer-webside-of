@@ -174,6 +174,11 @@ export function Navbar() {
                 <a href={`mailto:${site.email}`} className="text-lg text-bone-2">
                   {site.email}
                 </a>
+                {site.phone.href && (
+                  <a href={`tel:${site.phone.href}`} className="-mt-3 text-lg text-bone-2">
+                    {site.phone.display}
+                  </a>
+                )}
                 <div className="flex gap-3">
                   <a href={site.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid size-12 place-items-center rounded-full border border-line-2">
                     <GithubIcon className="size-5" />

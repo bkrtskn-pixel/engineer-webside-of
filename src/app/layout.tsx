@@ -62,6 +62,7 @@ const jsonLd = {
   name: site.fullName,
   jobTitle: `${site.role}, ${site.roleSecondary}`,
   email: `mailto:${site.email}`,
+  telephone: site.phone.href,
   address: { "@type": "PostalAddress", addressLocality: site.location.city, addressCountry: "TR" },
   knowsAbout: ["Java", "Oracle Database", "SQL", "PL/SQL", "PrimeFaces", "Backend Development", "Enterprise Software", "Database Architecture"],
   sameAs: [site.socials.github, site.socials.linkedin].filter(Boolean),
