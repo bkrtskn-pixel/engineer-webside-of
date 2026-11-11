@@ -1,0 +1,74 @@
+# Her main push'unda: bağımlılıkları kur → statik siteyi derle → gh-pages dalına yayınla.
+# Depo ayarlarında Pages kaynağı: "Deploy from a branch" → gh-pages / (root)
+name: Derle ve GitHub Pages'e yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Yayın adresi depo adından otomatik belirlenir:
+      #  kullanici/engineer-webside-of  → https://kullanici.github.io/engineer-webside-of/
+      #  kullanici/kullanici.github.io  → https://kullanici.github.io/
+      # Kendi alan adınız için Settings > Variables'ta SITE_URL ve BASE_PATH tanımlayın.
+      - name: Yayın adresini belirle
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          VAR_SITE_URL: ${{ vars.SITE_URL }}
+          VAR_BASE_PATH: ${{ vars.BASE_PATH }}
+        run: |
+          owner_lc="${OWNER,,}"
+          repo_lc="${REPO,,}"
+          site_url="${VAR_SITE_URL:-https://${owner_lc}.github.io}"
+          if [ -n "$VAR_BASE_PATH" ]; then base_path="$VAR_BASE_PATH"
+          elif [ "$repo_lc" = "${owner_lc}.github.io" ]; then base_path=""
+          else base_path="/${REPO}"; fi
+          echo "SITE_URL=${site_url}" >> "$GITHUB_ENV"
+          echo "BASE_PATH=${base_path}" >> "$GITHUB_ENV"
+          echo "::notice title=Yayın adresi::${site_url}${base_path}/"
+
+      - name: Bağımlılıkları kur
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+
+      - name: Derle (tip denetimi dahil)
+        run: npm run build
+
+      - name: gh-pages dalına yayınla
+        run: |
+          touch out/.nojekyll
+          cd out
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Yayın: ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+      # İlk çalıştırmada lock dosyası yoksa, oluşan sürümleri yapıt olarak sakla
+      - name: package-lock.json yapıtı
+        if: hashFiles('package-lock.json') == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-lock
+          path: package-lock.json
