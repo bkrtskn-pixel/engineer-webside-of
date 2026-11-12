@@ -51,13 +51,13 @@ export function Navbar() {
               scrolled ? "border border-line bg-ink/70 py-2 pl-2 pr-2 backdrop-blur-xl md:pl-3" : "border border-transparent",
             )}
           >
-            <Link href="/" className="group flex items-center gap-3" data-cursor="hover" aria-label={site.fullName}>
+            <Link href="/" className="group flex items-center gap-3" data-cursor="hover" aria-label={site.brand}>
               <span className="grid size-10 place-items-center rounded-full bg-bone font-display text-sm font-bold tracking-tight text-ink transition-colors duration-500 group-hover:bg-acid">
                 {site.initials}
               </span>
               <span className="hidden font-display text-sm font-medium tracking-tight sm:block">
-                {site.fullName}
-                <span lang="en" className="block font-mono text-[0.62rem] uppercase tracking-[0.08em] text-mute">{site.role}</span>
+                {site.brand}
+                <span lang="tr" className="block font-mono text-[0.62rem] uppercase tracking-[0.08em] text-mute">{site.fullName}</span>
               </span>
             </Link>
 

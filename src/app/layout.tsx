@@ -16,12 +16,13 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}${basePath}/`),
-  title: { default: t.meta.title, template: `%s — ${site.fullName}` },
+  title: { default: t.meta.title, template: `%s — ${site.brand}` },
   description: t.meta.description,
-  applicationName: `${site.fullName} Portfolio`,
+  applicationName: site.brand,
   authors: [{ name: site.fullName, url: site.socials.github }],
   creator: site.fullName,
   keywords: [
+    site.brand,
     site.fullName,
     "Computer Engineer",
     "Bilgisayar Mühendisi",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
     title: t.meta.title,
     description: t.meta.description,
-    siteName: site.fullName,
+    siteName: site.brand,
     firstName: "Bekir",
     lastName: "Taşkın",
   },
@@ -67,6 +68,7 @@ const jsonLd = {
   knowsAbout: ["Java", "Oracle Database", "SQL", "PL/SQL", "PrimeFaces", "Backend Development", "Enterprise Software", "Database Architecture"],
   sameAs: [site.socials.github, site.socials.linkedin].filter(Boolean),
   url: `${siteUrl}${basePath}/`,
+  brand: { "@type": "Brand", name: site.brand },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

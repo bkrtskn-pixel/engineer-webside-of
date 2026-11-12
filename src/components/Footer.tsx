@@ -14,7 +14,8 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-line pt-16">
       <div className="shell grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="font-display text-2xl font-medium tracking-tight">{site.fullName}</p>
+          <p className="font-display text-2xl font-medium tracking-tight">{site.brand}</p>
+          <p className="mt-1 font-mono text-xs uppercase tracking-wider text-mute"><span lang="tr">{site.fullName}</span> · <span lang="en">{site.role}</span></p>
           <p className="mt-2 max-w-xs text-sm text-mute">{t.footer.tagline}</p>
         </div>
         <nav aria-label="Footer" className="md:col-span-3">
@@ -50,7 +51,7 @@ export function Footer() {
 
       {/* Dev kayan isim */}
       <Marquee
-        items={[`${site.firstName} ${site.lastName}`, site.role.toUpperCase()]}
+        items={[site.brand.toUpperCase(), t.hero.slogan.join(" ")]}
         duration={36}
         separator="✳"
         className="display mt-16 select-none py-4 text-[clamp(4rem,14vw,13rem)] text-outline"
@@ -58,7 +59,7 @@ export function Footer() {
 
       <div className="shell flex flex-col gap-2 border-t border-line py-6 font-mono text-[0.68rem] uppercase tracking-wider text-mute sm:flex-row sm:justify-between">
         <span>
-          © {site.year} {site.fullName}. {t.footer.rights}
+          © {site.year} {site.brand} · {site.fullName}. {t.footer.rights}
         </span>
         <span className="normal-case tracking-normal">{t.footer.built}</span>
       </div>

@@ -64,6 +64,8 @@ export interface Content {
     editableNote: string;
   };
   hero: {
+    /** Ana sayfadaki dev slogan — iki satır, büyük harf */
+    slogan: [string, string];
     eyebrow: string;
     intro: string;
     primaryCta: string;

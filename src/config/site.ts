@@ -6,6 +6,8 @@
  * ─────────────────────────────────────────────────────────────
  */
 export const site = {
+  /** Marka adı (menü, footer, sekme başlığı). Kişisel isim aşağıda ayrı tutulur. */
+  brand: "BT Software",
   firstName: "BEKİR",
   lastName: "TAŞKIN",
   fullName: "Bekir Taşkın",

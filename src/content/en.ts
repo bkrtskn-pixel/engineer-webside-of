@@ -2,7 +2,7 @@ import type { Content } from "./types";
 
 export const en: Content = {
   meta: {
-    title: "Bekir Taşkın — Computer Engineer & Software Developer",
+    title: "BT Software — Bekir Taşkın | Computer Engineer & Software Developer",
     description:
       "Computer engineer based in Ankara, building enterprise backend systems and web applications with Java, Oracle Database and SQL.",
   },
@@ -34,7 +34,8 @@ export const en: Content = {
     editableNote: "Details in this section are placeholders and will be updated.",
   },
   hero: {
-    eyebrow: "Portfolio — Backend & Enterprise Software",
+    slogan: ["BUILT", "TO LAST."],
+    eyebrow: "BT Software — Backend & Enterprise Software",
     intro:
       "I build the software organisations rely on every day: solid services in Java, scalable data layers on Oracle and clean, functional web interfaces.",
     primaryCta: "Explore my projects",

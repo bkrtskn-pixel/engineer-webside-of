@@ -2,7 +2,7 @@ import type { Content } from "./types";
 
 export const tr: Content = {
   meta: {
-    title: "Bekir Taşkın — Bilgisayar Mühendisi & Yazılım Geliştirici",
+    title: "BT Software — Bekir Taşkın | Bilgisayar Mühendisi & Yazılım Geliştirici",
     description:
       "Ankara merkezli bilgisayar mühendisi. Java, Oracle Database ve SQL ile kurumsal backend sistemleri ve web uygulamaları geliştiriyor.",
   },
@@ -34,7 +34,8 @@ export const tr: Content = {
     editableNote: "Bu bölümdeki bilgiler örnektir ve güncellenecektir.",
   },
   hero: {
-    eyebrow: "Portfolyo — Backend & Kurumsal Yazılım",
+    slogan: ["SAĞLAM", "TEMELLER."],
+    eyebrow: "BT Software — Backend & Kurumsal Yazılım",
     intro:
       "Kurumların her gün güvendiği yazılımları geliştiriyorum. Java ile sağlam servisler, Oracle ile ölçeklenebilir veri katmanları ve sade, işlevsel web arayüzleri.",
     primaryCta: "Projelerimi incele",

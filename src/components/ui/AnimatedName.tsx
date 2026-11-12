@@ -23,7 +23,7 @@ function Letter({ ch, index, delay, play }: { ch: string; index: number; delay: 
         <span className="inline-block animate-[name-wave_7s_ease-in-out_infinite]" style={{ animationDelay: `${2.4 + delay + index * 0.07}s` }}>
           {/* imleçten kaçış */}
           <motion.span className="inline-block" style={{ x, y, rotate, color }}>
-            {ch}
+            {ch === " " ? "\u00a0" : ch}
           </motion.span>
         </span>
       </motion.span>

@@ -176,13 +176,19 @@ export function Hero() {
 
         {/* İsim */}
         <motion.h1
-          style={{ y: nameY, opacity: fade }}
-          className="display mt-8 text-[27vw] text-bone md:mt-10 md:text-[clamp(4.6rem,22vw,17.5rem)]"
+          key={t.hero.slogan.join(" ")}
+          style={{
+            y: nameY,
+            opacity: fade,
+            // En uzun satırın ekrana sığacağı en büyük punto (masaüstünde 2. satırda rozet de var)
+            fontSize: `min(17.5rem, calc((100vw - 3rem) / ${(t.hero.slogan[0].length * 0.64).toFixed(2)}), calc((100vw - 3rem - var(--badge)) / ${(t.hero.slogan[1].length * 0.64).toFixed(2)}))`,
+          }}
+          className="display mt-8 text-bone [--badge:0px] md:mt-10 md:[--badge:12rem]"
         >
           <span className="sr-only">
-            {site.fullName} — {site.role}, {site.roleSecondary}
+            {site.brand}: {t.hero.slogan.join(" ")} — {site.fullName}, {site.role}
           </span>
-          <AnimatedName text={site.firstName} play={ready} delay={0.05} />
+          <AnimatedName text={t.hero.slogan[0]} play={ready} delay={0.05} />
           <span className="flex items-center gap-6 md:justify-end md:gap-10">
             <motion.span
               initial={{ opacity: 0, scale: 0.6, rotate: -40 }}
@@ -192,7 +198,7 @@ export function Hero() {
             >
               <OrbitBadge label={t.hero.primaryCta} />
             </motion.span>
-            <AnimatedName text={site.lastName} play={ready} delay={0.25} />
+            <AnimatedName text={t.hero.slogan[1]} play={ready} delay={0.25} />
           </span>
         </motion.h1>
 
@@ -204,6 +210,10 @@ export function Hero() {
         {/* Alt ızgara */}
         <div className="mt-auto grid gap-8 pb-8 pt-10 md:grid-cols-12 md:items-end md:gap-6 md:pb-10">
           <motion.div {...appear(0.55)} className="md:col-span-4">
+            <p className="label mb-2 flex items-center gap-2">
+              <span className="h-px w-6 bg-acid" />
+              <span lang="tr">{site.fullName}</span>
+            </p>
             <p className="font-display text-2xl font-medium leading-tight tracking-tight md:text-[1.7rem]">
               {site.role}
               <span className="text-dim"> / </span>

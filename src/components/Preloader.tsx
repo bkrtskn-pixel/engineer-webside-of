@@ -52,7 +52,7 @@ export function Preloader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const letters = `${site.firstName} ${site.lastName}`.split("");
+  const letters = site.brand.toUpperCase().split("");
 
   return (
     <AnimatePresence onExitComplete={finish}>
@@ -71,7 +71,7 @@ export function Preloader() {
             </span>
           </div>
 
-          <div className="display flex flex-wrap overflow-hidden py-[0.14em] text-[13vw] text-bone md:text-[8vw]" aria-label={site.fullName}>
+          <div className="display flex flex-wrap overflow-hidden py-[0.14em] text-[13vw] text-bone md:text-[8vw]" aria-label={site.brand}>
             {letters.map((ch, i) => (
               <motion.span
                 key={i}
