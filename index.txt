@@ -1,0 +1,41 @@
+1:"$Sreact.fragment"
+2:"/engineer-webside-of/_next/static/chunks/0koya-p-5gsk6.js"
+3:"/engineer-webside-of/_next/static/chunks/42cbh2-3hmaym.js"
+4:"/engineer-webside-of/_next/static/chunks/1d658a_d5o83p.js"
+5:I[91961,["$2","$3","$4"],"Providers"]
+6:I[58473,["$2","$3","$4"],"CursorGlow"]
+7:I[58473,["$2","$3","$4"],"ScrollProgress"]
+8:I[39756,["$2","$3","$4"],"default"]
+9:"/engineer-webside-of/_next/static/chunks/2i_4lb_myn95u.js"
+a:I[45958,["$2","$3","$4","$9"],"default"]
+b:I[37457,["$2","$3","$4"],"default"]
+c:"/engineer-webside-of/_next/static/chunks/3hvclm5ft-pbn.js"
+d:I[29306,["$2","$3","$4","$c"],"default"]
+e:I[11292,["$2","$3","$4"],"Cursor"]
+10:"/engineer-webside-of/_next/static/chunks/3wjtsh5dst5fg.js"
+11:"/engineer-webside-of/_next/static/chunks/30z54dp_930-c.js"
+12:I[24179,["$2","$3","$4","$10","$11"],"Preloader"]
+13:I[45678,["$2","$3","$4","$10","$11"],"Navbar"]
+14:I[77258,["$2","$3","$4","$10","$11"],"Hero"]
+15:I[74599,["$2","$3","$4","$10","$11"],"TechBand"]
+16:I[75706,["$2","$3","$4","$10","$11"],"About"]
+17:I[13659,["$2","$3","$4","$10","$11"],"Skills"]
+18:I[68264,["$2","$3","$4","$10","$11"],"Projects"]
+19:I[34506,["$2","$3","$4","$10","$11"],"Experience"]
+1a:I[47710,["$2","$3","$4","$10","$11"],"Contact"]
+1b:I[13642,["$2","$3","$4","$10","$11"],"Footer"]
+1c:I[97367,["$2","$3","$4"],"OutletBoundary"]
+1d:"$Sreact.suspense"
+1f:"ViewportBoundary"
+20:I[97367,["$2","$3","$4"],"$1f"]
+22:"MetadataBoundary"
+23:I[97367,["$2","$3","$4"],"$22"]
+25:I[68027,["$2","$3","$4"],"default",1]
+:HL["/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","style"]
+:HC["/",""]
+f:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[[["$","$L12",null,{}],["$","$L13",null,{}],["$","main",null,{"children":[["$","$L14",null,{}],["$","$L15",null,{}],["$","$L16",null,{}],["$","$L17",null,{}],["$","$L18",null,{}],["$","$L19",null,{}],["$","$L1a",null,{}]]}],["$","$L1b",null,{}]],[["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/3wjtsh5dst5fg.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/engineer-webside-of/_next/static/chunks/30z54dp_930-c.js","async":true,"nonce":"$undefined"}]],["$","$L1c",null,{"children":["$","$1d",null,{"name":"Next.MetadataOutlet","children":"$@1e"}]}]]}],"p":false,"v":null}}]]
+0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/0koya-p-5gsk6.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/engineer-webside-of/_next/static/chunks/42cbh2-3hmaym.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/engineer-webside-of/_next/static/chunks/1d658a_d5o83p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"tr","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Bekir Taşkın\",\"jobTitle\":\"Computer Engineer, Software Developer\",\"email\":\"mailto:bkrtskn@gmail.com\",\"telephone\":\"+905544986821\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Ankara\",\"addressCountry\":\"TR\"},\"knowsAbout\":[\"Java\",\"Oracle Database\",\"SQL\",\"PL/SQL\",\"PrimeFaces\",\"Backend Development\",\"Enterprise Software\",\"Database Architecture\"],\"sameAs\":[\"https://github.com/bkrtskn-pixel\"],\"url\":\"https://bkrtskn-pixel.github.io/engineer-webside-of/\",\"brand\":{\"@type\":\"Brand\",\"name\":\"BT Software\"}}"}}],["$","$L5",null,{"children":[["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$La",null,{"children":["$","$Lb",null,{}]}],"templateStyles":[],"templateScripts":[["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/2i_4lb_myn95u.js","async":true,"nonce":"$undefined"}]],"notFound":[["$","$Ld",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$Le",null,{}]]}],["$","div",null,{"className":"grain","aria-hidden":true}]]}]}]]}],"p":false,"v":null},"c":"$Qf"},"h":{"r":["$","$1","h",{"children":[null,["$","$L20",null,{"children":"$L21"}],["$","$L23",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1d",null,{"name":"Next.Metadata","children":"$L24"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$25",[["$","link","0",{"rel":"stylesheet","href":"/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"VZZEAyrWQ_8E1fxwxwLfY"}
+21:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#09090b"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]
+26:I[27201,["$2","$3","$4"],"IconMark"]
+1e:null
+24:[["$","title","0",{"children":"BT Software — Bekir Taşkın | Bilgisayar Mühendisi & Yazılım Geliştirici"}],["$","meta","1",{"name":"description","content":"Ankara merkezli bilgisayar mühendisi. Java, Oracle Database ve SQL ile kurumsal backend sistemleri ve web uygulamaları geliştiriyor."}],["$","meta","2",{"name":"application-name","content":"BT Software"}],["$","link","3",{"rel":"author","href":"https://github.com/bkrtskn-pixel"}],["$","meta","4",{"name":"author","content":"Bekir Taşkın"}],["$","meta","5",{"name":"keywords","content":"BT Software,Bekir Taşkın,Computer Engineer,Bilgisayar Mühendisi,Software Developer,Yazılım Geliştirici,Backend Developer,Java,Oracle Database,SQL,PL/SQL,PrimeFaces,Enterprise Software,Ankara"}],["$","meta","6",{"name":"creator","content":"Bekir Taşkın"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","link","8",{"rel":"canonical","href":"https://bkrtskn-pixel.github.io/engineer-webside-of/"}],["$","meta","9",{"property":"og:title","content":"BT Software — Bekir Taşkın | Bilgisayar Mühendisi & Yazılım Geliştirici"}],["$","meta","10",{"property":"og:description","content":"Ankara merkezli bilgisayar mühendisi. Java, Oracle Database ve SQL ile kurumsal backend sistemleri ve web uygulamaları geliştiriyor."}],["$","meta","11",{"property":"og:site_name","content":"BT Software"}],["$","meta","12",{"property":"og:locale","content":"tr_TR"}],["$","meta","13",{"property":"og:locale:alternate","content":"en_US"}],["$","meta","14",{"property":"og:type","content":"profile"}],["$","meta","15",{"property":"profile:first_name","content":"Bekir"}],["$","meta","16",{"property":"profile:last_name","content":"Taşkın"}],["$","meta","17",{"name":"twitter:card","content":"summary"}],["$","meta","18",{"name":"twitter:title","content":"BT Software — Bekir Taşkın | Bilgisayar Mühendisi & Yazılım Geliştirici"}],["$","meta","19",{"name":"twitter:description","content":"Ankara merkezli bilgisayar mühendisi. Java, Oracle Database ve SQL ile kurumsal backend sistemleri ve web uygulamaları geliştiriyor."}],["$","link","20",{"rel":"icon","href":"/engineer-webside-of/icon.svg?icon.0ws-_8qndrctv.svg","sizes":"any","type":"image/svg+xml"}],["$","$L26","21",{}]]

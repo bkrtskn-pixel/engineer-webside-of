@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://bkrtskn-pixel.github.io/engineer-webside-of/sitemap.xml

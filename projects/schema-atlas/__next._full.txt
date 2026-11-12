@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+2:"/engineer-webside-of/_next/static/chunks/0koya-p-5gsk6.js"
+3:"/engineer-webside-of/_next/static/chunks/42cbh2-3hmaym.js"
+4:"/engineer-webside-of/_next/static/chunks/1d658a_d5o83p.js"
+5:I[91961,["$2","$3","$4"],"Providers"]
+6:I[58473,["$2","$3","$4"],"CursorGlow"]
+7:I[58473,["$2","$3","$4"],"ScrollProgress"]
+8:I[39756,["$2","$3","$4"],"default"]
+9:"/engineer-webside-of/_next/static/chunks/2i_4lb_myn95u.js"
+a:I[45958,["$2","$3","$4","$9"],"default"]
+b:I[37457,["$2","$3","$4"],"default"]
+c:"/engineer-webside-of/_next/static/chunks/3hvclm5ft-pbn.js"
+d:I[29306,["$2","$3","$4","$c"],"default"]
+e:I[11292,["$2","$3","$4"],"Cursor"]
+14:I[97367,["$2","$3","$4"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$2","$3","$4"],"$17"]
+1a:"MetadataBoundary"
+1b:I[97367,["$2","$3","$4"],"$1a"]
+1d:I[68027,["$2","$3","$4"],"default",1]
+:HL["/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","style"]
+:HC["/",""]
+10:X
+12:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":["$L13",[["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/3sst5j0-xh5_j.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/engineer-webside-of/_next/static/chunks/3wjtsh5dst5fg.js","async":true,"nonce":"$undefined"}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":false,"v":null}}]]
+11:[["children",{"s":{"n":"slug","t":"d","k":"schema-atlas","s":[]},"h":66048,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lb",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$10"},"c":"$Q12"}]]
+f:[["children",{"s":"projects","h":131584,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lb",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$10"},"c":"$Q11"}]]
+0:{"P":null,"c":["","projects","schema-atlas",""],"q":"","i":false,"t":{"t":{"s":"","h":131600,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/0koya-p-5gsk6.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/engineer-webside-of/_next/static/chunks/42cbh2-3hmaym.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/engineer-webside-of/_next/static/chunks/1d658a_d5o83p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"tr","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Bekir Taşkın\",\"jobTitle\":\"Computer Engineer, Software Developer\",\"email\":\"mailto:bkrtskn@gmail.com\",\"telephone\":\"+905544986821\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Ankara\",\"addressCountry\":\"TR\"},\"knowsAbout\":[\"Java\",\"Oracle Database\",\"SQL\",\"PL/SQL\",\"PrimeFaces\",\"Backend Development\",\"Enterprise Software\",\"Database Architecture\"],\"sameAs\":[\"https://github.com/bkrtskn-pixel\"],\"url\":\"https://bkrtskn-pixel.github.io/engineer-webside-of/\",\"brand\":{\"@type\":\"Brand\",\"name\":\"BT Software\"}}"}}],["$","$L5",null,{"children":[["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$La",null,{"children":["$","$Lb",null,{}]}],"templateStyles":[],"templateScripts":[["$","script","script-0",{"src":"/engineer-webside-of/_next/static/chunks/2i_4lb_myn95u.js","async":true,"nonce":"$undefined"}]],"notFound":[["$","$Ld",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$Le",null,{}]]}],["$","div",null,{"className":"grain","aria-hidden":true}]]}]}]]}],"p":false,"v":null},"c":"$Qf"},"h":{"r":["$","$1","h",{"children":[null,["$","$L18",null,{"children":"$L19"}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1c"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1d",[["$","link","0",{"rel":"stylesheet","href":"/engineer-webside-of/_next/static/chunks/22us4ude47lsa.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"VZZEAyrWQ_8E1fxwxwLfY"}
+1e:"/engineer-webside-of/_next/static/chunks/3sst5j0-xh5_j.js"
+1f:"/engineer-webside-of/_next/static/chunks/3wjtsh5dst5fg.js"
+20:I[86662,["$2","$3","$4","$1e","$1f"],"ProjectDetail"]
+10:C
+13:["$","$L20",null,{"slug":"schema-atlas"}]
+19:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#09090b"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]
+21:I[27201,["$2","$3","$4"],"IconMark"]
+16:null
+1c:[["$","title","0",{"children":"Schema Atlas — BT Software"}],["$","meta","1",{"name":"description","content":"Veritabanı şemasını okuyup etkileşimli ilişki haritası ve dokümantasyon üreten araç."}],["$","meta","2",{"name":"application-name","content":"BT Software"}],["$","link","3",{"rel":"author","href":"https://github.com/bkrtskn-pixel"}],["$","meta","4",{"name":"author","content":"Bekir Taşkın"}],["$","meta","5",{"name":"keywords","content":"BT Software,Bekir Taşkın,Computer Engineer,Bilgisayar Mühendisi,Software Developer,Yazılım Geliştirici,Backend Developer,Java,Oracle Database,SQL,PL/SQL,PrimeFaces,Enterprise Software,Ankara"}],["$","meta","6",{"name":"creator","content":"Bekir Taşkın"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","link","8",{"rel":"canonical","href":"https://bkrtskn-pixel.github.io/engineer-webside-of/projects/schema-atlas/"}],["$","meta","9",{"property":"og:title","content":"Schema Atlas"}],["$","meta","10",{"property":"og:description","content":"Veritabanı şemasını okuyup etkileşimli ilişki haritası ve dokümantasyon üreten araç."}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"name":"twitter:card","content":"summary"}],["$","meta","13",{"name":"twitter:title","content":"BT Software — Bekir Taşkın | Bilgisayar Mühendisi & Yazılım Geliştirici"}],["$","meta","14",{"name":"twitter:description","content":"Ankara merkezli bilgisayar mühendisi. Java, Oracle Database ve SQL ile kurumsal backend sistemleri ve web uygulamaları geliştiriyor."}],["$","link","15",{"rel":"icon","href":"/engineer-webside-of/icon.svg?icon.0ws-_8qndrctv.svg","sizes":"any","type":"image/svg+xml"}],["$","$L21","16",{}]]
